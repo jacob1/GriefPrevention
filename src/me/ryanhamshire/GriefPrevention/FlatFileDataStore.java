@@ -820,6 +820,7 @@ public class FlatFileDataStore extends DataStore
 			UUID playerID = UUID.fromString(file.getName());
 			databaseStore.savePlayerData(playerID, this.getPlayerData(playerID));
 			this.clearCachedPlayerData(playerID);
+            System.out.println("GP: started savePlayerData thread");
 		}
 		
 		//migrate next claim ID
