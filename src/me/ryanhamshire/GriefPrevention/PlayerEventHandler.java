@@ -960,11 +960,11 @@ class PlayerEventHandler implements Listener
 		Player player = event.getPlayer();
 		
 		//in creative worlds, dropping items is blocked
-		if(instance.creativeRulesApply(player.getLocation()))
+		/*if(instance.creativeRulesApply(player.getLocation()))
 		{
 			event.setCancelled(true);
 			return;
-		}
+		}*/
 		
 		PlayerData playerData = this.dataStore.getPlayerData(player.getUniqueId());
 		
