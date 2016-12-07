@@ -1174,9 +1174,9 @@ public class EntityEventHandler implements Listener
 			
 			//otherwise the player damaging the entity must have permission
 			else
-			{		
-				String noContainersReason = claim.allowContainers(attacker);
-				if(noContainersReason != null)
+			{
+				String noAccessReason = claim.allowAccess(attacker);
+				if(noAccessReason != null)
 				{
 					event.setCancelled(true);
 					String message = GriefPrevention.instance.dataStore.getMessage(Messages.NoDamageClaimedEntity, claim.getOwnerName());

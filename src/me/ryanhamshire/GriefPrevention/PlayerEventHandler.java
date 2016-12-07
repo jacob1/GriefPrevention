@@ -1755,10 +1755,10 @@ class PlayerEventHandler implements Listener
 			    Claim claim = this.dataStore.getClaimAt(clickedBlock.getLocation(), false, playerData.lastClaim);
 				if(claim != null)
 				{
-					String noBuildReason = claim.allowBuild(player, Material.BOAT);
-					if(noBuildReason != null)
+					String noAccessReason = claim.allowAccess(player);
+					if(noAccessReason != null)
 					{
-						instance.sendMessage(player, TextMode.Err, noBuildReason);
+						instance.sendMessage(player, TextMode.Err, noAccessReason);
 						event.setCancelled(true);
 					}
 				}
