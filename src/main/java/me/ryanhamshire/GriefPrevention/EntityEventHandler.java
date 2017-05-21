@@ -220,11 +220,11 @@ public class EntityEventHandler implements Listener
                 if (originalLocation.getBlockX() != newLocation.getBlockX() || originalLocation.getBlockZ() != newLocation.getBlockZ())
                 {
                     //in creative mode worlds, never form the block
-                    if (GriefPrevention.instance.config_claims_worldModes.get(newLocation.getWorld()) == ClaimsMode.Creative)
+                    /*if (GriefPrevention.instance.config_claims_worldModes.get(newLocation.getWorld()) == ClaimsMode.Creative)
                     {
                         event.setCancelled(true);
                         return;
-                    }
+                    }*/
 
                     //in other worlds, if landing in land claim, only allow if source was also in the land claim
                     Claim claim = this.dataStore.getClaimAt(newLocation, false, null);
@@ -321,7 +321,7 @@ public class EntityEventHandler implements Listener
         boolean applySurfaceRules = world.getEnvironment() == Environment.NORMAL && ((isCreeper && GriefPrevention.instance.config_blockSurfaceCreeperExplosions) || (!isCreeper && GriefPrevention.instance.config_blockSurfaceOtherExplosions));
 
         //special rule for creative worlds: explosions don't destroy anything
-        if (GriefPrevention.instance.creativeRulesApply(location))
+        /*if(GriefPrevention.instance.creativeRulesApply(location))
         {
             for (int i = 0; i < blocks.size(); i++)
             {
@@ -331,7 +331,7 @@ public class EntityEventHandler implements Listener
             }
 
             return;
-        }
+        }*/
 
         //make a list of blocks which were allowed to explode
         List<Block> explodedBlocks = new ArrayList<Block>();
@@ -396,10 +396,10 @@ public class EntityEventHandler implements Listener
     public void onItemSpawn(ItemSpawnEvent event)
     {
         //if in a creative world, cancel the event (don't drop items on the ground)
-        if (GriefPrevention.instance.creativeRulesApply(event.getLocation()))
+        /*if (GriefPrevention.instance.creativeRulesApply(event.getLocation()))
         {
             event.setCancelled(true);
-        }
+        }*/
 
         //if item is on watch list, apply protection
         ArrayList<PendingItemProtection> watchList = GriefPrevention.instance.pendingItemWatchList;
