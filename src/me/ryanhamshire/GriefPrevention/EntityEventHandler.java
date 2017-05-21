@@ -288,7 +288,7 @@ public class EntityEventHandler implements Listener
         boolean applySurfaceRules = world.getEnvironment() == Environment.NORMAL && ((isCreeper && GriefPrevention.instance.config_blockSurfaceCreeperExplosions) || (!isCreeper && GriefPrevention.instance.config_blockSurfaceOtherExplosions));
         
         //special rule for creative worlds: explosions don't destroy anything
-        if(GriefPrevention.instance.creativeRulesApply(location))
+        /*if(GriefPrevention.instance.creativeRulesApply(location))
         {
             for(int i = 0; i < blocks.size(); i++)
             {
@@ -299,7 +299,7 @@ public class EntityEventHandler implements Listener
             }
             
             return;
-        }
+        }*/
         
         //make a list of blocks which were allowed to explode
         List<Block> explodedBlocks = new ArrayList<Block>();
